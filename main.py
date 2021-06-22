@@ -20,7 +20,7 @@ app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
 with open('config.json', 'r') as c:
     params= json.load(c) ["params"]
    
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:@server.site.com/surseven website'   
+app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:@server.rcoder07-surseven.zeet.app//surseven website'   
 db = SQLAlchemy(app)
 
 class Videoscompany(db.Model):
