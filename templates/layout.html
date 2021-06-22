@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="http://fonts.googleapis.com/css?family=Monsterrat" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icons?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="shortcut icon" href="static/img/gitar.png"/>
+    </head>
+    <body>
+    <header>
+       <a href="/home"><img class="logo" src="{{url_for('static', filename='img/logo.png')}}" alt="SURSEVEN.com"></a>
+        <nav>
+        <ul class="nav_menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/audios">Songs</a></li>
+        <li><a href="/videos">Videos</a></li>
+        <li><a href="/contact">Contact</a></li>
+        </ul>
+        </nav>
+        <div class="search"><input class="se" type="text" name="search" placeholder="Search Your Favourite"></div>
+        <div class="search-icon"><img src="https://img.icons8.com/ios-filled/20/000000/search--v4.png"/></div>
+        {% if session['email'] %}
+        <div class="plus-icon"><img src="https://img.icons8.com/material-sharp/30/000000/add.png"/></div>
+        <div class="create"><a href="/create"><button class="cr">Create</button></a></div>
+        <div class="pro"><a class="ac-icon" href="/profile"><img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-1-2--v2.png" alt="Account"></a></div>
+        <div class="pn"></div><p><b>{{session['name']}}</b></p></div>
+        {% else %}
+        <div class='reg-log-home'> 
+        <a href="/register"><button class="btn-reg">Register</button></a>
+         <a href="/login"><button class="btn-log">Login</button></a>
+        </div>
+        {% endif %} 
+    </header>
+
+    {% block title %}{% endblock %} 
+
+ <!-- Footer-->
+ <footer class="border-top">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a href="#!">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <img src="https://img.icons8.com/color/48/000000/twitter-circled--v4.png"/>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/WDFD.Developer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.youtube.com/channel/UCWcjOEALqjLE5oImQyfn6Iw/featured">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <img src="https://img.icons8.com/color/48/fa314a/youtube--v3.png"/>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="copy">Copyright &copy; SUR SEVEN 2021</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+</body>
+</html>

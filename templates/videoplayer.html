@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}
+
+
+<div class="container-vp">
+<div class="player-container">
+<video  src="{{url_for('static',filename='videos/' + post.video_file)}}"></video>
+</div>
+<h1 style="font-family:arial; color:white;margin-left:-330px;margin-top:-500px"> Video Title : </h1> <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(228, 240, 64);margin-left: -400px; margin-top:-500px;font: size 10px;">{{post.title}}</h2>
+<a href="#"><button class="btn-download">Download</button></a>
+<br>
+<br>
+</div>
+<script>
+    var video = document.querySelectorAll('video')
+    video.forEach(play => play.addEventListener('click',() => {play.classList.toggle('active');
+    if(play.paused){
+        play.play();
+    }
+    else{
+        play.pause();
+        play.currentTime = 0;
+    }
+
+}))
+
+</script>
+
+{% endblock %}

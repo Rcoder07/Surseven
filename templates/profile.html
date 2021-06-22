@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block title %}
+<div class="container">
+        <div class="dp">
+        {% if session['email'] %}    
+            <img class="dp-photo" src="{{url_for('static',filename='img/dp.jpg')}}">
+
+        </div>
+        <h3 class="pr">NAME: {{session['name']}}</h3><br>
+        <h3 class="pr">AGE :  {{ session['age'] }} </h3><br>
+        <h3 class="pr">MOBILE NO : {{ session['phone'] }}</h3><br>
+        <h3 class="pr">EMAIL-ID : {{ session['email'] }}</h3><br>
+
+    <a class="lo" href="/logout"><button class="btn-logout">Log out</button></a>
+     {% else %}
+     
+     {% endif %}
+</div>
+    
+{% endblock %}

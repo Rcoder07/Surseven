@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block title %}
+ 
+<div class="container-contact">
+    <p>
+        {% with messages= get_flashed_messages() %}
+           {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-primary">
+                  <strong>{{ message }}</strong>
+               </div>  
+          {% endfor %}
+           {% endif %}
+        {% endwith %} 
+       </p>  
+       <br>
+    <form  action="/create" method="post"   enctype="multipart/form-data" required>
+        {% if session['email'] %}    
+        <h1 style="font-family:arial; color:white;">Upload Your Videos Here</h1> 
+        <div class="upload-file">
+        <input type="text" name="title" placeholder="Enter video Title" class="title">
+        <input type="file" name="inputFile" id="file" accept="video/*">
+        <label for="file">
+            <i class="material-icons">
+   
+            </i>&nbsp
+            Choose Your Video
+        </label>
+        <br>
+        
+        <a href="/create"><button class="btn-submit" value="upload a file ">submit</button></a>
+    </div>
+    </form>
+
+</div>
+   
+     {% else %}
+     <a href="/register"><button class="btn-reg">Register</button></a>
+     <a href="/login"><button class="btn-log">Login</button></a>
+     {% endif %}
+</div>
+    
+{% endblock %}

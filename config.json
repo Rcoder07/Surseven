@@ -1,0 +1,29 @@
+{
+    "params":
+        {
+            "local_server":"True",
+            "local_uri":"mysql://root:@localhost/surseven website",
+            "prod_uri":"mysql://root:@localhost/surseven website",
+    
+            "fb_url":"https://www.facebook.com/WDFD.Developer"
+           
+
+            
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+}

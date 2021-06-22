@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <link rel="shortcut icon" href="static/img/gitar.png"/>
+
+</head>
+<body>
+    <div class="container-login">
+        <img class="gitar" src="{{ url_for('static',filename='img/gitar.png')}}">
+        <div class="logo-login">
+        <img class="logo" src="{{url_for('static',filename='img/logo.png')}}"></div>
+        <form class="form" action="/register" method="post">
+            <h3 class="login"><b>Register Here</b></h3>
+           
+            <input type="text" class="reg-log" name="name" placeholder="Enter Name"><br>
+            <input type="text" class="reg-log" name="email" placeholder="Enter e-mail"><br>
+            <input type="text" class="reg-log" name="age" placeholder="Enter Your Age"><br>
+            <input type="text" class="reg-log" name="phone" placeholder=" Enter Phone No"><br>
+            <input type="text" class="reg-log" name="password" placeholder="Enter Password"><br>
+            <div class="container-login-btn">
+            <a class="btn-login" href="/profile"><button>Register</button></a>
+            </div>
+            <p class="ac">Already Have a Account.    <a href="/login"><b> Login Here </b></a></p>
+            
+    
+        </form>
+    
+    </div>
+    
+</body>
+</html>
