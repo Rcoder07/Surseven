@@ -19,12 +19,8 @@ app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
 
 with open('config.json', 'r') as c:
     params= json.load(c) ["params"]
-    local_server=True
-
-if(local_server):
-    app.config["SQLALCHEMY_DATABASE_URI"] = params['local_uri']
-else:
-    app.config["SQLALCHEMY_DATABASE_URI"] = params['prod_uri']     
+   
+app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:@producthost/surseven website'   
 db = SQLAlchemy(app)
 
 class Videoscompany(db.Model):
@@ -60,7 +56,7 @@ class Contacts(db.Model):
 
 @app.route('/')
 def homedahbord():
-    return render_template('videos.html')
+    return render_template('home.html.html')
 
 
 @app.route('/home', methods=['GET', 'POST'])
