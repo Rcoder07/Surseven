@@ -60,7 +60,7 @@ class Contacts(db.Model):
 
 @app.route('/')
 def homedahbord():
-    return render_template('home.html')
+    return render_template('videos.html')
 
 
 @app.route('/home', methods=['GET', 'POST'])
