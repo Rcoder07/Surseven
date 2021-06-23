@@ -56,7 +56,7 @@ class Contacts(db.Model):
 
 @app.route('/')
 def homedahbord():
-    return render_template('home.html,params=params')
+    return render_template('home.html',params=params)
 
 
 @app.route('/home', methods=['GET', 'POST'])
